@@ -1,10 +1,197 @@
+/* Általános stílusok */
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
 }
 
-h2 {
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 0.5em;
-  margin-bottom: 1em;
+/* Add padding equal to navbar height when scrolling to anchors */
+/* Ezt a scroll-margin-top-ra cseréltük a section-ökön, de itt hagytam kommentben, ha visszatérnél hozzá */
+/*
+html {
+    scroll-padding-top: 75px;
+}
+*/
+
+
+/* Navigációs sáv stílusok */
+.navbar {
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Hero szekció */
+.hero {
+    height: 100vh;
+    position: relative;
+    background: url('images/buvesz-show-fellepes-budapest-háttérkép.jpg') center center / cover no-repeat;
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+    padding: 60px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero .hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    margin-bottom: 0;
+}
+
+/* Általános szekció stílusok */
+section {
+    padding: 60px 0;
+    /* Hozzáadjuk a scroll-margin-top-ot a görgetési célhoz */
+    scroll-margin-top: 80px; /* Ez az érték tolja lejjebb a célpontot a navbar alatt */
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #007bff;
+    display: inline-block;
+    width: auto;
+}
+
+
+/* Műsorok kártya stílusok */
+#musorok .card {
+    border: none;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#musorok .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+}
+
+#musorok .card-title {
+    color: #007bff;
+}
+
+/* Galéria stílusok */
+.gallery-img {
+    /* Eltávolítva a cursor: pointer; */
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    object-fit: cover;
+    height: 250px;
+    width: 100%;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05); /* Megnagyobbítás hoverre */
+    filter: brightness(0.9); /* Kicsit sötétebb lesz hoverre */
+}
+
+/* Referencia stílusok */
+#referenciak .card {
+     border-left: 5px solid #007bff;
+}
+
+#referenciak .blockquote-footer {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+/* Kapcsolat stílusok */
+#kapcsolat .list-group-item {
+    transition: background-color 0.3s ease-in-out;
+}
+
+#kapcsolat .list-group-item:hover {
+    background-color: #e9ecef;
+}
+
+#kapcsolat .list-group-item i {
+    color: #007bff;
+}
+
+/* Lábléc stílusok */
+footer {
+    background-color: #343a40 !important;
+    color: #dee2e6 !important;
+}
+
+footer a {
+    color: #adb5bd;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+
+/* Reszponzív finomhangolások */
+@media (max-width: 767.98px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    section {
+        padding: 40px 0;
+        scroll-margin-top: 70px; /* Finomhangolás szükséges lehet */
+    }
+     section h2 {
+         margin-bottom: 30px;
+     }
+     .gallery-img {
+         height: 200px;
+     }
+     /* Ha scroll-padding-top-ot használsz: */
+     /* html { scroll-padding-top: 65px; } */
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+     .gallery-img {
+         height: 220px;
+     }
+     section {
+        scroll-margin-top: 75px; /* Finomhangolás szükséges lehet */
+     }
+}
+
+#lightboxOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#lightboxOverlay img {
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 0 20px #000;
+    border-radius: 8px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
