@@ -1,49 +1,198 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólió - [A Te Neved]</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kőműves Marcell professzionális bűvész budapesti fellépésekre és rendezvényekre. Színpadi műsorok, mikromágia és gyerekműsor egy helyen!">
+  <meta name="keywords" content="bűvész, bűvész show, rendezvény, gyerekprogram, mikromágia, budapest">
+  <meta name="author" content="Kőműves Marcell">
+  <title>Kőműves Marcell - Professzionális Bűvész Showk</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script defer src="main.js"></script>
+
+  <style>
+    /* Scroll progress bar */
+    #scrollProgress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 4px;
+      background-color: #007bff;
+      z-index: 9999;
+      transition: width 0.2s ease-out;
+    }
+
+    /* Parallax háttér */
+    .hero {
+      background-image: url('images/bűvész-háttérkép.jpg');
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: top;
+      height: 100vh;
+      color: white;
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+  </style>
 </head>
+
 <body>
 
-  <header class="bg-dark text-white text-center p-5">
-    <h1>[A Te Neved]</h1>
-    <p class="lead">Webfejlesztő | Tervező | Freelancer</p>
+  <!-- Scroll Progress Bar -->
+  <div id="scrollProgress"></div>
+
+  <!-- Navigáció -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#" >Kőműves Marcell</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#musorok">Műsorok</a></li>
+          <li class="nav-item"><a class="nav-link" href="#rolam">Rólam</a></li>
+          <li class="nav-item"><a class="nav-link" href="#galeria">Galéria</a></li>
+          <li class="nav-item"><a class="nav-link" href="#referenciak">Referenciák</a></li>
+          <li class="nav-item"><a class="nav-link" href="#kapcsolat">Kapcsolat</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero szekció -->
+  <header class="hero d-flex align-items-center justify-content-start text-start ps-5">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1 class="display-7">Kőműves Marcell - Bűvész</h1>
+      <p class="lead">Bűvész showk rendezvényekre, születésnapokra<br> és céges programokra.</p>
+      <a href="#kapcsolat" class="btn btn-primary btn-lg mt-3">Lépj kapcsolatba velem!</a>
+    </div>
   </header>
 
-  <section class="container my-5">
-    <h2>Rólam</h2>
-    <p>Egy rövid bemutatkozás arról, ki vagy, mivel foglalkozol, és miért jó veled dolgozni.</p>
-  </section>
-
-  <section class="container my-5">
-    <h2>Projektek</h2>
-    <div class="row">
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Projekt neve">
-          <div class="card-body">
-            <h5 class="card-title">Projekt 1</h5>
-            <p class="card-text">Rövid leírás a projektről.</p>
-          </div>
-        </div>
-      </div>
-      <!-- További projektek -->
+  <!-- Műsorok -->
+  <section id="musorok" class="container py-5">
+    <h2 class="mb-4">Műsorok</h2>
+    <div class="row text-center">
+      <!-- Ide jöhet a konkrét műsorleírás -->
+      <p>Itt bemutathatod a színpadi show, mikromágia és gyerekműsor részleteit.</p>
     </div>
   </section>
 
-  <section class="container my-5">
-    <h2>Kapcsolat</h2>
-    <p>E-mail: <a href="mailto:te@email.com">te@email.com</a></p>
-    <p>LinkedIn: <a href="#" target="_blank">linkedin.com/in/teprofilod</a></p>
+  <!-- Rólam -->
+  <section id="rolam" class="bg-light py-5">
+    <div class="container">
+      <h2 class="mb-4">Rólam</h2>
+      <p>Kőműves Marcell vagyok, professzionális bűvész Budapesten. Több mint 10 éve lépek fel különböző rendezvényeken, céges programokon és születésnapokon. A színpadi műsoroktól a mikromágiáig, illetve gyerekeknek szóló előadásaimig igyekszem mindig egyedi, szórakoztató élményt nyújtani minden korosztálynak.</p>
+      <p>Hiszek abban, hogy a bűvészet nemcsak szórakoztatás, hanem egy varázslatos kapcsolat az előadó és a közönség között, ezért minden fellépésemen arra törekszem, hogy az élmény személyes és felejthetetlen legyen.</p>
+    </div>
   </section>
 
-  <footer class="bg-light text-center py-4">
-    <p>© 2025 [A Te Neved]. Minden jog fenntartva.</p>
+  <!-- Galéria -->
+  <section id="galeria" class="py-5">
+    <div class="container">
+      <h2 class="mb-4">Galéria</h2>
+      <div class="row">
+        <div class="col-sm-6 col-md-4 mb-4">
+          <a href="images/komuves-marcell-kártya-bűvészet.jpg" class="glightbox" data-gallery="galeria">
+            <img src="images/komuves-marcell-kártya-bűvészet.jpg" class="gallery-img rounded shadow img-fluid" alt="Bűvész fellépés">
+          </a>
+        </div>
+        <div class="col-sm-6 col-md-4 mb-4">
+          <a href="images/kőműves-marcell-fellépés.jpg" class="glightbox" data-gallery="galeria">
+            <img src="images/kőműves-marcell-fellépés.jpg" class="gallery-img rounded shadow img-fluid" alt="Mikromágia akcióban">
+          </a>
+        </div>
+        <div class="col-sm-6 col-md-4 mb-4">
+          <a href="images/kőműves-marcell-gyermekműsor.jpg" class="glightbox" data-gallery="galeria">
+            <img src="images/kőműves-marcell-gyermekműsor.jpg" class="gallery-img rounded shadow img-fluid" alt="Gyerekműsor pillanata">
+          </a>
+        </div>
+        <div class="col-sm-6 col-md-4 mb-4">
+          <a href="images/buvesz-show-fellepes-budapest-háttérkép.jpg" class="glightbox" data-gallery="galeria">
+            <img src="images/buvesz-show-fellepes-budapest-háttérkép.jpg" class="gallery-img rounded shadow img-fluid" alt="A függöny mögött">
+          </a>
+        </div>
+        <div class="col-sm-6 col-md-4 mb-4">
+          <a href="images/kreatív-fotózás.jpg" class="glightbox" data-gallery="galeria">
+            <img src="images/kreatív-fotózás.jpg" class="gallery-img rounded shadow img-fluid" alt="Tükörkép">
+          </a>
+        </div>
+        <div class="col-sm-6 col-md-4 mb-4">
+          <a href="images/színpadi-produkció.jpg" class="glightbox" data-gallery="galeria">
+            <img src="images/színpadi-produkció.jpg" class="gallery-img rounded shadow img-fluid" alt="Színpadon műsor közben">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Referenciák -->
+  <section id="referenciak" class="bg-light py-5">
+    <div class="container">
+      <h2 class="mb-4">Referenciák</h2>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">„Kőműves Marcell bűvész műsora fergeteges volt a céges bulinkon!” – XYZ Kft.</li>
+        <li class="list-group-item">„Gyerekzsúrunk fénypontja volt a szórakoztató gyerekműsor.” – Kovács család</li>
+        <li class="list-group-item">„Kiváló előadás, profi hozzáállás és csodás illúziók.” – Budapest Rendezvényszervező Kft.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Kapcsolat -->
+<section id="kapcsolat" class="container py-5">
+  <h2 class="mb-4">Kapcsolat</h2>
+  <p>Keress bizalommal az alábbi elérhetőségeimen:</p>
+  <ul class="list-unstyled fs-5">
+    <li><strong>E-mail:</strong> <a href="mailto:musor@komuvesmarcell.hu">musor@komuvesmarcell.hu</a></li>
+    <li><strong>Telefon:</strong> <a href="tel:+36702969237">+36 70 296 9237</a></li>
+  </ul>
+</section>
+
+  <!-- Lábléc -->
+  <footer class="text-center py-4">
+    <p>&copy; 2025 Kőműves Marcell. Minden jog fenntartva.</p>
   </footer>
 
+  <!-- Script: scroll bar + lightbox -->
+  <script>
+    window.addEventListener('scroll', () => {
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const scrollTop = window.scrollY;
+      const scrolled = (scrollTop / docHeight) * 100;
+      document.getElementById('scrollProgress').style.width = `${scrolled}%`;
+    });
+
+    // Lightbox
+    document.addEventListener('DOMContentLoaded', () => {
+      const lightbox = GLightbox({
+        selector: '.glightbox',
+        loop: true // lehetővé teszi a körbeléptetést
+      });
+    });
+  </script>
+
 </body>
+
 </html>
